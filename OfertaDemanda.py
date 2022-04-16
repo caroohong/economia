@@ -2,7 +2,7 @@
 #Pd: precio pagado por el consumidor
 #DAPmax: maxima dispocision a pagar del consumidor: 13.99
 #d: pendiente de la demanda
-#Qd: cantidad que el consumidor quiere comprar para su determinado precio
+#Qd: cantidad que el consumidor quiere comprar para su determinado precio: 1 o 2 suscripciones
 
 #Ps = COmin + s*Qs
 #Ps: precio percibido por el productor
@@ -45,8 +45,9 @@ class mercado:
     def oferta(self,x):
         "Función oferta"
         return self.COmin + self.s*x
+#d= $(13.99-8.99)/1 suscripcion
 #DAPmax, COmin, d, s
-param_i = 13.99,0,1,5
+param_i = 13.99,0,5,5
 m = mercado(*param_i) 
 
 q_max = m.cantidad_equilibrio() * 2
@@ -63,3 +64,9 @@ ax.set_ylabel('precio', fontsize=14)
 ax.legend(loc='lower right', frameon=False, fontsize=14)
 ax.set(title='Oferta, Demanda y Equilibrio de mercados')
 plt.show()
+
+print("Excedente productor =",m.excedente_productor())
+print("Excedente consumidor =",m.excedente_consumidor())
+print("Excedente total =",m.excedente_total())
+print("Cantidad de equilibrio =",m.cantidad_equilibrio())
+print("Precio de equilibrio =",m.precio_equilibrio())
