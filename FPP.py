@@ -3,19 +3,19 @@ import matplotlib.pyplot as plt
 import numpy as np
 from ipywidgets import interact, fixed
 #parametros iniciales
-ALPHA = 0.2   # capital share in agriculture
-BETA = 0.5   # capital share in manufacturing
+ALPHA = 0.3   # capital share in theaters
+BETA = 0.29   # capital share in streaming platforms
 KBAR = 265  #Straming
 LBAR = 44  #Cines
 p = 1      # =Pa/Pm  relative price of ag goods
 #pendiente: LBAR/KBAR
 #FUNCIONES BIEN F, BIEN G
 def F(K,L,alpha=ALPHA):
-    """Agriculture Production function"""
+    """Theaters Production function"""
     return (K**alpha)*(L**(1-alpha))
 
 def G(K,L,beta=BETA):
-    """Manufacturing Production function"""
+    """Streaming Platforms Production function"""
     return (K**beta)*(L**(1-beta))
 #BUDGET
 def budgetc(c1, p1, p2, I):
@@ -72,9 +72,9 @@ def fpp(LA,Kbar=KBAR, Lbar=LBAR,alpha=ALPHA,beta=BETA):
     ax.set_xlim(0, Lbar)
     ax.set_ylim(0, Kbar)
     ax.plot(Qa, Qm,'k-')
-    ax.set_xlabel('Plataformas de Streaming',fontsize=18)
-    ax.set_ylabel('Cines',fontsize=18)
+    ax.set_xlabel('Audiencia de las plataformas de Streaming',fontsize=18)
+    ax.set_ylabel('Audiencia de los Cines y Teatros',fontsize=18)
     plt.show()
 
 fig, ax = plt.subplots(figsize=(7,6))
-fpp(309,alpha=0.2,beta=0.5)
+fpp(1000,alpha=0.3,beta=0.28)
