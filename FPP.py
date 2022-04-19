@@ -4,9 +4,9 @@ import numpy as np
 from ipywidgets import interact, fixed
 #parametros iniciales
 ALPHA = 0.3   # capital share in theaters
-BETA = 0.29   # capital share in streaming platforms
-KBAR = 265  #Straming
-LBAR = 44  #Cines
+BETA = 0.24   # capital share in streaming platforms
+KBAR = 2700  #capital
+LBAR = 5000  #labor
 p = 1      # =Pa/Pm  relative price of ag goods
 #pendiente: LBAR/KBAR
 #FUNCIONES BIEN F, BIEN G
@@ -77,4 +77,4 @@ def fpp(LA,Kbar=KBAR, Lbar=LBAR,alpha=ALPHA,beta=BETA):
     plt.show()
 
 fig, ax = plt.subplots(figsize=(7,6))
-fpp(1000,alpha=0.3,beta=0.28)
+fpp(1000,alpha=0.3,beta=0.24)
